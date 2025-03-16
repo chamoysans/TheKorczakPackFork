@@ -1472,7 +1472,7 @@ end
       "at least {E:1,C:attention}3{} consecutive times"
     }
     },
-    config = { extra = 20, max_retrigger = 5 },
+    config = { extra = {item = 20}, max_retrigger = 5 },
     rarity = 3,
     atlas = "korczak",
     blueprint_compat = true,
@@ -1492,7 +1492,7 @@ end
       
       if context.repetition then
         if context.cardarea == G.play then
-          local frames = math.floor(G.GAME.dollars/card.ability.extra)
+          local frames = math.floor(G.GAME.dollars/card.ability.extra.item)
           local my_frames = 0
           while(frames > 0) do
             for i = 1, #context.scoring_hand do
